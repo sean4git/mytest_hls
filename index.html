@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title >hls.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body style="background-color: black;">
+
+<video autoplay="autoplay" controls width="1920" height="1080" id="video-player"></video>
+
+<script>
+	var CH = 1;
+	var videoSrc = 'https://bloomberg-bloomberg-3-br.samsung.wurl.com/manifest/playlist.m3u8';
+
+	function hlsPlayer(videoSrc){
+			var video = document.getElementById('video-player');
+
+			if (video.canPlayType('application/vnd.apple.mpegurl')) {
+				video.src = videoSrc;
+			} else if (Hls.isSupported()) {
+					var hls = new Hls();
+					hls.loadSource(videoSrc);
+					hls.attachMedia(video);
+			}
+	}
+	
+	hlsPlayer(videoSrc);
+	
+	window.addEventListener("keydown", checkKey, false);
+	
+	function checkKey(e){
+					if(e.keyCode == 33){
+					//if(e.keyCode == 49){
+					CH = CH + 1;
+					if(CH > 7){CH = 1;}
+					console.log(CH);
+					hlsSrc(CH);
+				 } else if(e.keyCode == 34){
+				 //} else if(e.keyCode == 50){
+					CH = CH - 1;
+					if(CH < 1){CH = 7;}
+					console.log(CH);
+					hlsSrc(CH);
+				} 
+			}
+	
+	function hlsSrc(CH){
+				switch(CH){
+					case 1:
+					console.log("#1")
+					videoSrc = 'https://bloomberg-bloomberg-3-br.samsung.wurl.com/manifest/playlist.m3u8';
+					hlsPlayer(videoSrc);
+					break;
+					case 2:
+					console.log("#2")
+					videoSrc = 'http://tracesportstars-samsunges.amagi.tv/hls/amagi_hls_data_samsunguk-tracesport-samsungspain/CDN/playlist.m3u8';
+					hlsPlayer(videoSrc);
+					break;
+					case 3:
+					console.log("#3")
+					videoSrc = 'https://rakuten-euronews-10-be.samsung.wurl.tv/playlist.m3u8';
+					hlsPlayer(videoSrc);
+					break;
+					case 4:
+					console.log("#4")
+					videoSrc = 'https://fashiontv-fashiontv-4-de.samsung.wurl.com/manifest/playlist.m3u8';
+					hlsPlayer(videoSrc);
+					break;
+					case 5:
+					console.log("#5")
+					videoSrc = 'http://amdlive-ch01.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8';
+					hlsPlayer(videoSrc);
+					break;
+					case 6:
+					console.log("#6")
+					videoSrc = 'http://bbstv.clouducs.com:1935/bbstv-live/livestream/playlist.m3u8';
+					hlsPlayer(videoSrc);
+					break;										
+					case 7:
+					console.log("#7")
+					videoSrc = 'https://gstv-myshop.gsshop.com/myshop_hd/myshop_hd.stream/playlist.m3u8';
+					hlsPlayer(videoSrc);
+					break;										
+
+					//default:
+					//break;
+				}
+			}
+	
+</script>
+
+</body>
+</html>
