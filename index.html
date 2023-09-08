@@ -34,13 +34,13 @@
 					if(e.keyCode == 33){
 					//if(e.keyCode == 49){
 					CH = CH + 1;
-					if(CH > 7){CH = 1;}
+					if(CH > 9){CH = 1;}
 					console.log(CH);
 					hlsSrc(CH);
 				 } else if(e.keyCode == 34){
 				 //} else if(e.keyCode == 50){
 					CH = CH - 1;
-					if(CH < 1){CH = 7;}
+					if(CH < 1){CH = 9;}
 					console.log(CH);
 					hlsSrc(CH);
 				} 
@@ -82,7 +82,17 @@
 					console.log("#7")
 					videoSrc = 'https://gstv-myshop.gsshop.com/myshop_hd/myshop_hd.stream/playlist.m3u8';
 					hlsPlayer(videoSrc);
-					break;										
+					break;
+					case 8:
+					console.log("#8")
+					videoSrc = 'https://mediacp.us:8081/nex/index.m3u8';
+					hlsPlayer(videoSrc);
+					break;
+					case 9:
+					console.log("#9")
+					videoSrc = 'https://mdstrm.com/live-stream-playlist/5d88dd2229b0890723df2165.m3u8';
+					hlsPlayer(videoSrc);
+					break;
 
 					//default:
 					//break;
