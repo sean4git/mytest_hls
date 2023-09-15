@@ -11,8 +11,8 @@
 <video autoplay="autoplay" controls width="1920" height="1080" id="video-player"></video>
 
 <script>
-	var CH = 1;
-	var videoSrc = 'https://bloomberg-bloomberg-3-br.samsung.wurl.com/manifest/playlist.m3u8';
+	var CH = 8;
+	var videoSrc = 'https://1206618505.rsc.cdn77.org/LS-ATL-59020-1/playlist.m3u8';
 
 	function hlsPlayer(videoSrc){
 			var video = document.getElementById('video-player');
@@ -34,13 +34,13 @@
 					if(e.keyCode == 33){
 					//if(e.keyCode == 49){
 					CH = CH + 1;
-					if(CH > 12){CH = 1;}
+					if(CH > 11){CH = 1;}
 					console.log(CH);
 					hlsSrc(CH);
 				 } else if(e.keyCode == 34){
 				 //} else if(e.keyCode == 50){
 					CH = CH - 1;
-					if(CH < 1){CH = 12;}
+					if(CH < 1){CH = 11;}
 					console.log(CH);
 					hlsSrc(CH);
 				} 
@@ -85,7 +85,7 @@
 					break;
 					case 8:
 					console.log("#8")
-					videoSrc = 'https://mediacp.us:8081/nex/index.m3u8';
+					videoSrc = 'https://1206618505.rsc.cdn77.org/LS-ATL-59020-1/playlist.m3u8';
 					hlsPlayer(videoSrc);
 					break;
 					case 9:
@@ -101,11 +101,6 @@
 					case 11:
 					console.log("#11")
 					videoSrc = 'https://cloudvideo.servers10.com:8081/8138/index.m3u8';
-					hlsPlayer(videoSrc);
-					break;
-					case 12:
-					console.log("#12")
-					videoSrc = 'https://1206618505.rsc.cdn77.org/LS-ATL-59020-1/playlist.m3u8';
 					hlsPlayer(videoSrc);
 					break;
 
