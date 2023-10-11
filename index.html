@@ -34,13 +34,13 @@
 					if(e.keyCode == 33){
 					//if(e.keyCode == 49){
 					CH = CH + 1;
-					if(CH > 11){CH = 1;}
+					if(CH > 10){CH = 1;}
 					console.log(CH);
 					hlsSrc(CH);
 				 } else if(e.keyCode == 34){
 				 //} else if(e.keyCode == 50){
 					CH = CH - 1;
-					if(CH < 1){CH = 11;}
+					if(CH < 1){CH = 10;}
 					console.log(CH);
 					hlsSrc(CH);
 				} 
@@ -90,16 +90,11 @@
 					break;
 					case 9:
 					console.log("#9")
-					videoSrc = 'https://mdstrm.com/live-stream-playlist/5d88dd2229b0890723df2165.m3u8';
+					videoSrc = 'https://mdstrm.com/live-stream-playlist/5d97ca5673de440761ff194e.m3u8';
 					hlsPlayer(videoSrc);
 					break;
 					case 10:
 					console.log("#10")
-					videoSrc = 'https://mdstrm.com/live-stream-playlist/5d97ca5673de440761ff194e.m3u8';
-					hlsPlayer(videoSrc);
-					break;
-					case 11:
-					console.log("#11")
 					videoSrc = 'https://cloudvideo.servers10.com:8081/8138/index.m3u8';
 					hlsPlayer(videoSrc);
 					break;
